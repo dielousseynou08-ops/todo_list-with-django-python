@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+<heade>
+        <title>My todo</title>
+        <link href="{%  static 'css/styles.css' %}" rel="stylesheet">
+
+</heade>
+<body>
+    <div class="topnav">
+        <a href="{% url 'todo' %}"> Home </a>
+        <a href="{% url 'todo_create' %}"> Taches</a>
+    </div>
+    {% block content %}
+    
+    {% endblock %}
+</body>
+
+</html>

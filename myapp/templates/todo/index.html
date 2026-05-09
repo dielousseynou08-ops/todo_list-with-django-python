@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        
+        
+        <div class="mycard">
+                <h1>My Todo liste</h1>
+        <ul>
+        {% for task in todos %}
+
+            <li onclick="window.location = 'details/{{task.id}}'"> {{task.title}} 
+        
+            </li>
+
+        {% endfor %}
+        
+        </ul>
+        </div>
+        
+        
+{% endblock %}

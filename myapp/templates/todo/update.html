@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    
+    <form method="post" class=" mycard">
+        <h2>Modifier la tâche</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Mettre à jour</button>
+        <a href="{% url 'todo' %}" class="btn btn-secondary">Annuler</a>
+    </form>
+</div>
+{% endblock %}

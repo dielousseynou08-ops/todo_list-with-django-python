@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+  <div class="mycard">
+    
+    <h1>{{ todos.title }} </h1>
+    <p> Tache {{ todos.content }}</p>
+
+    <!-- button supprimer entouré form pour plus de sécu,   -->
+    <form method="POST" action="{% url 'delete' todos.id %}">
+        {% csrf_token %}
+        <button type="submit">Supprimer</button>
+        
+    </form>
+
+<!-- button modifier entouré form pour plus de sécu,   -->
+    <form method="POST" action="{% url 'update_todo' todos.id %}">
+        {% csrf_token %}
+        <button type="submit">Modifier</button>
+    </form>
+    
+  </div> 
+{% endblock %}  
